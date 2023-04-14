@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-function App() {
+import ShowOrderList from './components/ShowOrderList';
+import CreateOrder from './components/CreateOrder';
+import UpdateOrderInfo from './components/UpdateOrderInfo';
+import ShowOrderDetails from './components/ShowOrderDetails';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route exact path='/' element={<ShowOrderList />} />
+          <Route path='/create-order' element={<CreateOrder />} />
+          <Route path='/edit-order/:id' element={<UpdateOrderInfo />} />
+          <Route path='/show-order/:id' element={<ShowOrderDetails />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
