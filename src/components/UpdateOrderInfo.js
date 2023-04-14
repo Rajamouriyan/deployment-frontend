@@ -15,7 +15,7 @@ function UpdateOrderInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/orders/${id}`)
+      .get(`https://deployment-backend.onrender.com/api/orders/${id}`)
       .then((res) => {
         setOrder({
           title: res.data.title,
@@ -42,7 +42,7 @@ function UpdateOrderInfo(props) {
     };
 
     axios
-      .put(`http://localhost:8000/api/orders/${id}`, data)
+      .put(`https://deployment-backend.onrender.com/api/orders/${id}`, data)
       .then((res) => {
         navigate(`/show-order/${id}`);
       })

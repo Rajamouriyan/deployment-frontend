@@ -21,7 +21,7 @@ const CreateOrder = (props) => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:8000/api/orders', order)
+      .post('https://deployment-backend.onrender.com/api/orders', order)
       .then((res) => {
         setOrder({
           title: '',

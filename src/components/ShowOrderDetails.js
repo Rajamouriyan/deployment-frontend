@@ -11,7 +11,7 @@ function ShowOrderDetails(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/orders/${id}`)
+      .get(`https://deployment-backend.onrender.com/api/orders/${id}`)
       .then((res) => {
         setOrder(res.data);
       })
@@ -22,7 +22,7 @@ function ShowOrderDetails(props) {
 
   const onDeleteClick = (id) => {
     axios
-      .delete(`http://localhost:8000/api/orders/${id}`)
+      .delete(`https://deployment-backend.onrender.com/api/orders/${id}`)
       .then((res) => {
         navigate('/');
       })

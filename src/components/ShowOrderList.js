@@ -9,7 +9,7 @@ function ShowOrderList() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/api/orders')
+      .get('https://deployment-backend.onrender.com/api/orders')
       .then((res) => {
         setOrders(res.data);
       })
